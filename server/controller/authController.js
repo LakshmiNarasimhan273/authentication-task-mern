@@ -106,9 +106,15 @@ const userProfile = (req, res) => {
   }
 };
 
+const logoutUser = (req, res) => {
+  res.clearCookie("token");
+  res.json({ message: "Logout Successful" });
+};
+
 module.exports = {
   test,
   registerUser,
   loginUser,
   userProfile,
+  logoutUser,
 };
